@@ -127,7 +127,7 @@ class ramsPDO{
         }
     }
     //重置参数
-    public function resetOption() {
+    private function resetOption() {
         $this->sql="";
         $this->option["field"]="*";
         $this->option["order"]="";
@@ -164,20 +164,6 @@ class ramsPDO{
         $this->chain['show'] = $bool;
 
         return $this;
-    }
-    //获取sql参数字符串
-    private function sqlParms($args){
-        $parms = '';
-        if(is_array($args)){
-            foreach ($args as $k => $v) {
-                if ($v == '' || $k == 'show') {
-                    continue;
-                }
-                $parms .= "`$k`='$v'".',';
-            }
-
-            return rtrim($parms, ',');
-        }
     }
 
     /*
