@@ -10,11 +10,11 @@ include_once "core/constant.php";
 include_once "core/function.php";
 
 spl_autoload_register(function ($classname){
-    $filename=RAMS_ROOT."/vender/rams/$classname.class.php";
+    $filename=RAMS_ROOT."/library/$classname.class.php";
     if(file_exists($filename)){
         require($filename);
     }
-    $filename=RAMS_ROOT."/vender/other/$classname.class.php";
+    $filename=RAMS_ROOT."/vender/$classname.class.php";
     if(file_exists($filename)){
         require($filename);
     }
